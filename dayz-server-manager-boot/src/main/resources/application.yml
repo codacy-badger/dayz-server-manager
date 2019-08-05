@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: local
+
+mods:
+  updatingEnabled: true
+  interval: 600000
+
+steam:
+  folderName: steam
+  windows:
+    url: https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+    exec: steamcmd.exe
+  linux:
+    url: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+    exec: steamcmd.sh
+dayz:
+  configuration:
+    name: dayz-server.json
+  appId: 221100
+  server:
+    appId: 223350
+
+ftp:
+  acceptedFiles: addons, keys, bisign, pbo, cpp, bikey
+
+debug: false

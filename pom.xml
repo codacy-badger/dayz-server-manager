@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<modules>
+		<module>dayz-server-manager-boot</module>
+		<module>dayz-server-manager-model</module>
+		<module>dayz-server-manager-steam</module>
+        <module>dayz-server-manager-ftp</module>
+		<module>dayz-server-manager-service</module>
+	</modules>
+
+	<groupId>sk.dayz</groupId>
+	<artifactId>dayz-server-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>DAYZ SERVER MANAGER</name>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+
+		<!-- Apache -->
+		<commons-net-version>3.6</commons-net-version>
+		<commons-io-version>2.6</commons-io-version>
+
+		<lombok-version>1.18.8</lombok-version>
+		<jackson-databind-version>2.9.8</jackson-databind-version>
+    </properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Internal -->
+			<dependency>
+				<groupId>sk.dayz</groupId>
+				<artifactId>dayz-server-manager-boot</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sk.dayz</groupId>
+				<artifactId>dayz-server-manager-steam</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sk.dayz</groupId>
+				<artifactId>dayz-server-manager-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sk.dayz</groupId>
+				<artifactId>dayz-server-manager-ftp</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sk.dayz</groupId>
+				<artifactId>dayz-server-manager-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Apache -->
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>${commons-net-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io-version}</version>
+			</dependency>
+
+			<!-- Lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok-version}</version>
+			</dependency>
+
+			<!-- ObjectMapper -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-databind-version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
