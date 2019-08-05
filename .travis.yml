@@ -1,9 +1,6 @@
 language: java
 jdk: oraclejdk8
-cache:
-  directories:
-    - $HOME/.m2
-
+dist: trusty
 addons:
   apt:
     packages:
