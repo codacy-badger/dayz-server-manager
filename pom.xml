@@ -35,7 +35,8 @@
 
 		<lombok-version>1.18.8</lombok-version>
 		<jackson-databind-version>2.9.9.2</jackson-databind-version>
-    </properties>
+		<cobertura-maven-plugin-version>2.7</cobertura-maven-plugin-version>
+	</properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -93,4 +94,21 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura-maven-plugin-version}</version>
+				<configuration>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+					<check />
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

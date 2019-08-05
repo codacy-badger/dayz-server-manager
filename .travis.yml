@@ -1,0 +1,7 @@
+language: java
+sudo: false
+
+script: "mvn clean install cobertura:cobertura"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 4be4064d-d269-4949-aff3-bb0307e04c7c
