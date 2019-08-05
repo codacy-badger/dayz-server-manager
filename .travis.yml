@@ -3,7 +3,19 @@ jdk: oraclejdk8
 cache:
   directories:
     - $HOME/.m2
-script: "mvn clean install cobertura:cobertura"
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 4be4064d-d269-4949-aff3-bb0307e04c7c
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      - oracle-java8-unlimited-jce-policy
+  sonarcloud:
+    organization: "mlobb"
+    token:
+      secure: "76e1d6d5c05e8c1a0e3b30a682faf8b7e6f15545" # encrypted value of your token
+
+
+before_install:
+  - java -version
+
+script: "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=mlobb_dayz-server-manager"
